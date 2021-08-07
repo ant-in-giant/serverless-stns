@@ -1,0 +1,26 @@
+version: '3'
+services:
+  dynamodb:
+    image: instructure/dynamo-local-admin
+    environment:
+      AWS_REGION: ap-northeast-1
+    ports:
+      - "8000:8000"
+    volumes:
+      - dynamodb:/var/lib/dynamodb
+  api:
+    build:
+      context: ./lambda/stns-api
+    image: stns-api
+    environment:
+      AWS_REGION: ap-northeast-1
+      DYNAMODB_ENDPOINT: http://dynamodb:8000
+    command: /bin/bash -c "bundle exec ruby server.rb"
+    volumes:
+      - ./stns-api/src:/app:ro
+    ports:
+      - "4567:4567"
+
+volumes:
+  dynamodb:
+    driver: local
