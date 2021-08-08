@@ -1,2 +1,10 @@
 .idea
 .DS_Store
+/stns-server/*/.terraform
+/stns-server/*/terraform.d
+/stns-server/*/generated
+/stns-server/*/backend.tf
+/stns-server/*/*.tfvars
+/stns-server/*/*.tfvars.*
+/stns-server/*/*.tfstate
+/stns-server/*/*.tfstate.*
