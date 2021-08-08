@@ -30,5 +30,5 @@ EOF
   base_tags = {
     "CreatedBy" = "terraform"
   }
-  endpoint_type = "EDGE"
+  endpoint_type = "REGIONAL"
 }
