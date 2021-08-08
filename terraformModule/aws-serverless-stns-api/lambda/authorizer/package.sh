@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-DIRNAME=$( (cd $(dirname $0)/ && pwd) )
+DIRNAME=$( (cd $(dirname $0) && pwd) )
 SRCDIR="${DIRNAME}/src"
 
 source_checksum() {
@@ -27,8 +27,16 @@ is_updated() {
 
 re_install() {
   cd "${SRCDIR}"; rm -rf .bundle vendor
-  [[ ! -e Gemfile.lock ]] && bundle install --path vendor/bundle --without test 1>&2
-  bundle install --deployment --path vendor/bundle --without test 1>&2
+  #[[ ! -e Gemfile.lock ]] && bundle install --path vendor/bundle --without test 1>&2
+  [[ ! -e Gemfile.lock ]] \
+  && bundle config set --local path 'vendor/bundle' \
+  && bundle config set --local without 'test' \
+  && bundle install 1>&2
+  #bundle install --deployment --path vendor/bundle --without test 1>&2
+  bundle config set --local path 'vendor/bundle' \
+  && bundle config set --local without 'test' \
+  && bundle config set --local deployment 'true' \
+  && bundle install 1>&2
 }
 
 archive_sources() {

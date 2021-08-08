@@ -1,4 +1,5 @@
 src/.bundle/
 src/vendor/
+src/Gemfile.lock
 *.zip
 .checksum
