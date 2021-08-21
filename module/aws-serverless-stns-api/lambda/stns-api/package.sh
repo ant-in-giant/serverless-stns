@@ -6,7 +6,7 @@ SRCDIR="${DIRNAME}/src"
 source_checksum() {
   cd "${DIRNAME}"
   local check_sources="$(find src -name '*.rb' | grep -v vendor/) src/config.ru Gemfile"
-  cat ${check_sources} | md5sum
+  cat ${check_sources} | md5
 }
 
 is_updated() {

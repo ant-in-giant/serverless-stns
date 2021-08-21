@@ -1,21 +1,10 @@
 # serverless-stns 
 
-bases: https://github.com/sogaoh/aws-stns-serverless-api  
-origin: https://github.com/QLife-Inc/aws-stns-serverless-api
+IaC tools to prepare a mechanism to manage SSH logins to Linux servers.
 
-stns: https://stns.jp/
+uses:
+- https://github.com/STNS/STNS
 
-
-## PreRequirements
-macOS or Linux
-
-### Create Server
-- for api
-  - Ruby 2.7
-  - find コマンド (Lambda ソースを一覧するために利用)
-  - md5sum コマンド (Lambda ソースの更新チェックに利用)
-  - zip コマンド (Lambda ソースのアーカイブに利用)
-- for infrastructure
-  - Terraform 1.0
-  - terraform-provider-aws (>=3.52.0)
-
+refers:
+- https://github.com/sogaoh/aws-stns-serverless-api
+  - forked from: https://github.com/QLife-Inc/aws-stns-serverless-api

@@ -2,7 +2,7 @@
 
 resource aws_lambda_function "authorizer" {
   filename         = data.external.package_authorizer.result.filename
-  source_code_hash = base64sha256(filemd5(data.external.package_authorizer.result.filename))
+  source_code_hash = filebase64sha256(data.external.package_authorizer.result.filename)
   function_name    = "${var.api_name}-authorizer"
   role             = aws_iam_role.authorizer.arn
   handler          = "authorizer.lambda_handler"

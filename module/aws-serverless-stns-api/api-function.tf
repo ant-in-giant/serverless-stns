@@ -1,6 +1,6 @@
 resource aws_lambda_function "stns" {
   filename         = data.external.package_api.result.filename
-  source_code_hash = base64sha256(filemd5(data.external.package_api.result.filename))
+  source_code_hash = filebase64sha256(data.external.package_api.result.filename)
   function_name    = var.api_name
   role             = aws_iam_role.stns.arn
   handler          = "app.lambda_handler"
