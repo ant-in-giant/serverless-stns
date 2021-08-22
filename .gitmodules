@@ -1,0 +1,5 @@
+[submodule "stns-client/setup"]
+	path = stns-client/setup
+	url = git@github.com:ant-in-giant/stns-client-setup.git
+	branch = main
+	ignore = dirty
