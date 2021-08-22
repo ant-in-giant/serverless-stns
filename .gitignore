@@ -8,3 +8,5 @@
 /stns-backend/*/*.tfvars.*
 /stns-backend/*/*.tfstate
 /stns-backend/*/*.tfstate.*
+
+/stns-backend/lambroll/*/function.zip

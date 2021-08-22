@@ -1,0 +1,22 @@
+{
+  "Description": "",
+  "Environment": {
+    "Variables": {
+      "API_ID": "{{ tfstate `module.stns.aws_api_gateway_rest_api.api.id` }}",
+      "API_KEY": "{{ tfstate `module.stns.aws_api_gateway_api_key.api.value` }}",
+      "AUTH_TABLE": "stns-authorizations"
+    }
+  },
+  "FunctionName": "stns-api-authorizer",
+  "Handler": "authorizer.lambda_handler",
+  "MemorySize": 128,
+  "Role": "{{ tfstate `module.stns.aws_iam_role.authorizer.arn` }}",
+  "Runtime": "ruby2.7",
+  "Tags": {
+    "CreatedBy": "terraform"
+  },
+  "Timeout": 3,
+  "TracingConfig": {
+    "Mode": "PassThrough"
+  }
+}
