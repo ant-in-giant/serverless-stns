@@ -11,3 +11,12 @@
 
 /stns-backend/lambroll/*/function.zip
 /stns-backend/lambroll/*/.envrc
+
+/stns-client/create/*/.terraform
+/stns-client/create/*/terraform.d
+/stns-client/create/*/generated
+/stns-client/create/*/backend.tf
+/stns-client/create/*/*.tfvars
+/stns-client/create/*/*.tfvars.*
+/stns-client/create/*/*.tfstate
+/stns-client/create/*/*.tfstate.*
