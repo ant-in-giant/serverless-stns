@@ -1,6 +1,8 @@
 .lambdaignore
 function.json
-function.zip
+function_deploy.json
 .git/*
 .terraform/*
 terraform.tfstate
+.envrc
+.envrc.example

@@ -10,3 +10,4 @@
 /stns-backend/*/*.tfstate.*
 
 /stns-backend/lambroll/*/function.zip
+/stns-backend/lambroll/*/.envrc

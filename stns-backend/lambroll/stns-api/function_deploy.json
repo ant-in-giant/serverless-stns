@@ -1,0 +1,25 @@
+{
+  "Description": "",
+  "Environment": {
+    "Variables": {
+      "GROUP_TABLE": "stns-groups",
+      "USER_TABLE": "stns-users"
+    }
+  },
+  "FunctionName": "stns-api",
+  "Handler": "app.lambda_handler",
+  "MemorySize": 128,
+  "Role": "{{ tfstate `module.stns.aws_iam_role.stns.arn` }}",
+  "Runtime": "ruby2.7",
+  "Tags": {
+    "CreatedBy": "terraform"
+  },
+  "Timeout": 3,
+  "TracingConfig": {
+    "Mode": "PassThrough"
+  },
+  "Code": {
+    "S3Bucket": "{{ must_env `FUNCTION_TEMP_S3_BUCKET` }}",
+    "S3Key": "{{ must_env `FUNCTION_TEMP_S3_KEY` }}"
+  }
+}

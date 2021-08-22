@@ -1,0 +1,2 @@
+export FUNCTION_TEMP_S3_BUCKET="serverless-stns-bucket"
+export FUNCTION_TEMP_S3_KEY="deploy/stns-api/function.zip"
