@@ -45,7 +45,7 @@ resource aws_instance "amzn2_ec2_instance" {
 
   metadata_options {
     http_endpoint = "enabled"
-    http_tokens = "optional"  # "required"  # @see: https://tfsec.dev/docs/aws/AWS079/
+    http_tokens = "required"  # @see: https://tfsec.dev/docs/aws/AWS079/
   }
 
   tags = {
