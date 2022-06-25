@@ -32,7 +32,7 @@ data aws_ami "default" {
 
 
 resource aws_instance "amzn2_arm64_ec2_instance" {
-  ami                    = data.aws_ami.default.id
+  ami                    = var.ami == "" ? data.aws_ami.default.id : var.ami
   instance_type          = var.instance_type
   iam_instance_profile   = "Ec2SsmAccessIamInstanceProfile"
   subnet_id              = var.subnet_id
