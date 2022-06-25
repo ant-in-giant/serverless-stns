@@ -15,7 +15,7 @@ resource aws_instance "focal_ec2_instance" {
 
   metadata_options {
     http_endpoint = "enabled"
-    http_tokens = "required"  # @see: https://tfsec.dev/docs/aws/AWS079/
+    http_tokens = "required"  # @see: https://aquasecurity.github.io/tfsec/latest/checks/aws/ec2/enforce-http-token-imds/
   }
 
   tags = {
